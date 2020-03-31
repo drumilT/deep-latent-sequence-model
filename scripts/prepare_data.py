@@ -14,6 +14,7 @@ def download_file_from_google_drive(id, destination):
     if token:
         params = { 'id' : id, 'confirm' : token }
         response = session.get(URL, params = params, stream = True)
+    print(URL)
 
     save_response_content(response, destination)
 
@@ -68,6 +69,6 @@ if __name__ == "__main__":
         tar = tarfile.open(destination, "r:gz")
         tar.extractall()
         tar.close()
-        os.remove(destination)
+        #os.remove(destination)
 
     os.chdir("../")

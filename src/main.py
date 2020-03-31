@@ -595,6 +595,8 @@ def train():
   while True:
     step += 1
     x_train, x_mask, x_count, x_len, x_pos_emb_idxs, y_train, y_mask, y_count, y_len, y_pos_emb_idxs, y_sampled, y_sampled_mask, y_sampled_count, y_sampled_len, y_pos_emb_idxs, batch_size,  eop = data.next_train()
+    #print(x_train)
+    #print(x_count)
     target_words += (x_count - batch_size)
     total_sents += batch_size
     trans_logits, noise_logits, KL_loss, lm_len, trans_len = model.forward(x_train, x_mask, x_len, x_pos_emb_idxs, y_train, y_mask, y_len, y_pos_emb_idxs, y_sampled, y_sampled_mask, y_sampled_len)
