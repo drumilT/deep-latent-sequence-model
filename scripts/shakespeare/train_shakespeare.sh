@@ -44,4 +44,4 @@ python src/main.py \
     --klw 0.1 \
     --bt_stop_grad \
     --lm \
-    --avg_len \
+    #--avg_len \
